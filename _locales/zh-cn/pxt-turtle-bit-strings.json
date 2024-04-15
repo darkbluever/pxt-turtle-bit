@@ -4,20 +4,29 @@
     "turtleBit.car_state|block": "小车 %sta",
     "turtleBit.Motor|block": "%M 电机 %D 转，速度 %speed \\%",
     "turtleBit.MotorSta|block": "%M 电机 %act",
+    "turtleBit.LED_brightness|block": "LED灯亮度 %br",
+    "turtleBit.Led|block": "设置 %RgbLed LED灯颜色 %col",
+    "turtleBit.SetLed|block": "设置 LED灯 %RgbLed |红: %red|绿: %green|蓝: %blue",
+    "turtleBit.OFFLed|block": "关闭全部LED灯",
+    "turtleBit.LineTracking|block": "巡线",
+    "turtleBit.ultra|block": "超声波传感器",
+    "turtleBit.button|block": "按钮",
 
     "turtleBit.DIR.Run_forward|block": "向前移动",
     "turtleBit.DIR.Run_back|block": "向后移动",
     "turtleBit.DIR.Turn_Left|block": "向左转",
     "turtleBit.DIR.Turn_Right|block": "向右转",
-
     "turtleBit.LR.LeftSide|block": "左侧",
     "turtleBit.LR.RightSide|block": "右侧",
-
     "turtleBit.MotorState.stop|block": "停止",
     "turtleBit.MotorState.brake|block": "刹车",
-
     "turtleBit.MD.Forward|block": "向前",
     "turtleBit.MD.Back|block": "向后",
+    "turtleBit.COLOR.red|block": "红色",
+    "turtleBit.COLOR.green|block": "绿色",
+    "turtleBit.COLOR.blue|block": "蓝色",
+    "turtleBit.COLOR.white|block": "白色",
+    "turtleBit.COLOR.black|block": "黑色",
 
     "{id:group}Motor": "电机",
     "{id:group}RGB-led": "RGB灯",
