@@ -1,0 +1,25 @@
+{
+    "turtleBit|block": "小车",
+    "turtleBit.run|block": "小车 %direction 速度：%speed \\%",
+    "turtleBit.car_state|block": "小车 %sta",
+    "turtleBit.Motor|block": "%M 电机 %D 转，速度 %speed \\%",
+    "turtleBit.MotorSta|block": "%M 电机 %act",
+
+    "turtleBit.DIR.Run_forward|block": "向前移动",
+    "turtleBit.DIR.Run_back|block": "向后移动",
+    "turtleBit.DIR.Turn_Left|block": "向左转",
+    "turtleBit.DIR.Turn_Right|block": "向右转",
+
+    "turtleBit.LR.LeftSide|block": "左侧",
+    "turtleBit.LR.RightSide|block": "右侧",
+
+    "turtleBit.MotorState.stop|block": "停止",
+    "turtleBit.MotorState.brake|block": "刹车",
+
+    "turtleBit.MD.Forward|block": "向前",
+    "turtleBit.MD.Back|block": "向后",
+
+    "{id:group}Motor": "电机",
+    "{id:group}RGB-led": "RGB灯",
+    "{id:group}Sensor": "传感器"
+}

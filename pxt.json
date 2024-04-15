@@ -10,7 +10,8 @@
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "_locales/zh-cn/pxt-turtle-bit-strings.json"
     ],
     "testFiles": [
         "test.ts"
