@@ -25,7 +25,7 @@ namespace turtleBit {
     /**
      * use for RGB-LED
      */
-    enum COLOR {
+    export enum COLOR {
         red,
         green,
         blue,
@@ -35,26 +35,26 @@ namespace turtleBit {
     /**
      * use for control motor
      */
-    enum DIR {
+    export enum DIR {
         Run_forward = 0,
         Run_back = 1,
         Turn_Left = 2,
         Turn_Right = 3
     }
-    enum LR {
+    export enum LR {
         LeftSide = 0,
         RightSide = 1
     }
-    enum MotorState {
+    export enum MotorState {
         stop = 0,
         brake = 1
     }
-    enum MD {
+    export enum MD {
         Forward = 0,
         Back = 1
     }
 
-    enum LT {
+    export enum LT {
         Left,
         Center,
         Right
