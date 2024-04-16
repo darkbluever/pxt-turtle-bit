@@ -1,42 +1,3 @@
-/**
- * use for RGB-LED
- */
-enum COLOR {
-    red,
-    green,
-    blue,
-    white,
-    black
-}
-/**
- * use for control motor
- */
-enum DIR {
-    Run_forward = 0,
-    Run_back = 1,
-    Turn_Left = 2,
-    Turn_Right = 3
-}
-enum LR {
-    LeftSide = 0,
-    RightSide = 1
-}
-enum MotorState {
-    stop = 0,
-    brake = 1
-}
-enum MD {
-    Forward = 0,
-    Back = 1
-}
-
-enum LT {
-    Left,
-    Center,
-    Right
-}
-
-
 //% color="#ff6800" icon="\uf1b9" weight=15
 //% groups="['Motor', 'RGB-led', 'Neo-pixel', 'Sensor', 'Tone']"
 namespace turtleBit {
@@ -60,6 +21,44 @@ namespace turtleBit {
     //const ALL_LED_OFF_H = 0xFD;
 
     let PCA9685_Initialized = false
+
+    /**
+     * use for RGB-LED
+     */
+    enum COLOR {
+        red,
+        green,
+        blue,
+        white,
+        black
+    }
+    /**
+     * use for control motor
+     */
+    enum DIR {
+        Run_forward = 0,
+        Run_back = 1,
+        Turn_Left = 2,
+        Turn_Right = 3
+    }
+    enum LR {
+        LeftSide = 0,
+        RightSide = 1
+    }
+    enum MotorState {
+        stop = 0,
+        brake = 1
+    }
+    enum MD {
+        Forward = 0,
+        Back = 1
+    }
+
+    enum LT {
+        Left,
+        Center,
+        Right
+    }
 
     function i2cRead(addr: number, reg: number) {
         pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
@@ -378,8 +377,8 @@ namespace turtleBit {
                 val = pins.digitalReadPin(DigitalPin.P16);
                 break;
         }*/
-        val = (pins.digitalReadPin(DigitalPin.P14)<<2) + 
-              (pins.digitalReadPin(DigitalPin.P15)<<1) +
+        val = (pins.digitalReadPin(DigitalPin.P14) << 2) +
+              (pins.digitalReadPin(DigitalPin.P15) << 1) +
               (pins.digitalReadPin(DigitalPin.P16));
         return val;
     }
