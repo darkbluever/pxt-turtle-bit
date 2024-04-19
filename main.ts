@@ -402,6 +402,18 @@ namespace turtlebit {
         }
     }
 
+    /////////////////////////////////////////////////////
+    //% block="LineTracking"
+    //% group="Sensor" weight=69
+    export function LineTracking(): number {
+        let val = 0;
+        val = (pins.digitalReadPin(DigitalPin.P14) << 2) +
+              (pins.digitalReadPin(DigitalPin.P15) << 1) +
+              (pins.digitalReadPin(DigitalPin.P16));
+        return val;
+    }
+
+
     /**
      * line tracking
      * @return 0:保持原状
@@ -413,10 +425,11 @@ namespace turtlebit {
      *         6:小弯右转
      *         7:直行
      */
+    /*
     /////////////////////////////////////////////////////
-    //% block="LineTracking"
+    //% block="LineTracking4C"
     //% group="Sensor" weight=69
-    export function LineTracking(): number {
+    export function LineTracking4C(): number {
         // TrackSensorLeftPin1 LeftPin2 RightPin1 RightPin2
         //       P14              P11       P15       P16
         //       l1               l2        r1        r2
@@ -480,13 +493,8 @@ namespace turtlebit {
         }
         //当为1 1 1 1时小车保持上一个小车运行状态
         return 0;
-        /*
-        let val = 0;
-        val = (pins.digitalReadPin(DigitalPin.P14) << 2) +
-              (pins.digitalReadPin(DigitalPin.P15) << 1) +
-              (pins.digitalReadPin(DigitalPin.P16));
-        */
     }
+    */
 
     /**
      * Ultrasonic sensor
