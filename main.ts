@@ -130,7 +130,7 @@ namespace turtlebit {
     /**
      * car run diretion
      */
-    //% block="car $direction speed: $speed \\%"
+    //% block="car %direction speed: %speed \\%"
     //% speed.min=0 speed.max=100
     //% group="Motor" weight=99
     export function run(direction: DIR, speed: number) {
