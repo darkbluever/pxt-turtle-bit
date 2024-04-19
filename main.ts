@@ -225,6 +225,7 @@ namespace turtlebit {
             //setPwm(3, 0, 4095);
         }
     }
+    
     /**
      * set speed of motor
      */
@@ -307,6 +308,7 @@ namespace turtlebit {
         }
         L_brightness = Math.map(br, 0, 255, 0, 4095);
     }
+
     /**
      * set the rgb-led color via the color card
      */
