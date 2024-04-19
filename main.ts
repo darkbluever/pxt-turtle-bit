@@ -26,37 +26,55 @@ namespace turtlebit {
      * use for RGB-LED
      */
     export enum COLOR {
+        //% block="red"
         red,
+        //% block="green"
         green,
+        //% block="blue"
         blue,
+        //% block="white"
         white,
+        //% block="black"
         black
     }
     /**
      * use for control motor
      */
     export enum DIR {
+        //% block="run_forward"
         Run_forward = 0,
+        //% block="run_back"
         Run_back = 1,
+        //% block="turn_left"
         Turn_Left = 2,
+        //% block="turn_right"
         Turn_Right = 3
     }
     export enum LR {
+        //% block="left_side"
         LeftSide = 0,
+        //% block="right_side"
         RightSide = 1
     }
     export enum MotorState {
+        //% block="stop"
         stop = 0,
+        //% block="brake"
         brake = 1
     }
     export enum MD {
+        //% block="forward"
         Forward = 0,
+        //% block="back"
         Back = 1
     }
 
     export enum LT {
+        //% block="left"
         Left,
+        //% block="center"
         Center,
+        //% block="right"
         Right
     }
 
