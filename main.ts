@@ -48,7 +48,11 @@ namespace turtlebit {
         //% block="turn_left"
         Turn_Left = 2,
         //% block="turn_right"
-        Turn_Right = 3
+        Turn_Right = 3,
+        //% block="left"
+        Run_Left = 4,
+        //% block="right"
+        Run_Right = 5
     }
     export enum LR {
         //% block="left_side"
@@ -169,6 +173,22 @@ namespace turtlebit {
                 setPwm(2, 0, 4095);
                 setPwm(5, 0, speed_value);  //control speed : 0---4095
                 setPwm(4, 0, 4095);
+                setPwm(3, 0, 0);
+                break;
+			case 4:  //run left
+                setPwm(0, 0, 4095);  //control speed : 0---4095
+                setPwm(1, 0, 0);
+                setPwm(2, 0, 0);
+                setPwm(5, 0, speed_value);  //control speed : 0---4095
+                setPwm(4, 0, 0);
+                setPwm(3, 0, 4095);
+                break;
+			case 5:  //run right
+                setPwm(0, 0, speed_value);  //control speed : 0---4095
+                setPwm(1, 0, 0);
+                setPwm(2, 0, 4095);
+                setPwm(5, 0, 4095);  //control speed : 0---4095
+                setPwm(4, 0, 0);
                 setPwm(3, 0, 0);
                 break;
             default: break;
@@ -379,27 +399,92 @@ namespace turtlebit {
         }
     }
 
+    /**
+     * line tracking
+     * @return 0:保持原状
+     *         1:原地右转，直角弯
+     *         2:原地左转，直角弯
+     *         3:原地左转
+     *         4:原地右转
+     *         5:小弯左转
+     *         6:小弯右转
+     *         7:直行
+     */
     /////////////////////////////////////////////////////
     //% block="LineTracking"
     //% group="Sensor" weight=69
     export function LineTracking(): number {
+        // TrackSensorLeftPin1 LeftPin2 RightPin1 RightPin2
+        //       P14              P11       P15       P16
+        //       l1               l2        r1        r2
+        let l1 = 1;
+        let l2 = 1;
+        let r1 = 1;
+        let r2 = 1;
+        l1 = pins.DigitalReadPin(DigitalPin.P14)
+        l2 = pins.DigitalReadPin(DigitalPin.P11)
+        r1 = pins.DigitalReadPin(DigitalPin.P15)
+        r2 = pins.DigitalReadPin(DigitalPin.P16)
+        //四路循迹引脚电平状态
+        // 0 0 X 0
+        // 1 0 X 0
+        // 0 1 X 0
+        //以上6种电平状态时小车原地右转，速度为250,延时80ms
+        //处理右锐角和右直角的转动
+        if ((l1 == 0 || l2 == 0) && r2 == 0) {
+            return 1;
+        }
+        //四路循迹引脚电平状态
+        // 0 X 0 0       
+        // 0 X 0 1 
+        // 0 X 1 0       
+        //处理左锐角和左直角的转动
+        else if (l1 == 0 && (r1 == 0 || r2 == 0)) {
+            return 2;
+        }
+        // 0 X X X
+        //最左边检测到
+        else if (l1 == 0)
+        {
+            return 3;
+        }
+        // X X X 0
+        //最右边检测到
+        else if (r2 == 0 )
+        {
+            return 4;
+        }
+        //四路循迹引脚电平状态
+        // X 0 1 X
+        //处理左小弯
+        else if (l2 == 0 && r1 == 1)
+        {
+            return 5;
+        }
+        //四路循迹引脚电平状态
+        // X 1 0 X  
+        //处理右小弯
+        else if (l2 == 1 && r1 == 0)
+        {
+            return 6;
+        }
+        //四路循迹引脚电平状态
+        // X 0 0 X
+        //处理直线
+        else if (l2 == 0 && r1 == 0)
+        {
+            return 7;
+        }
+        //当为1 1 1 1时小车保持上一个小车运行状态
+        return 0;
+        /*
         let val = 0;
-        /*switch(lt){
-            case LT.Left  :
-                val = pins.digitalReadPin(DigitalPin.P14);
-                break;
-            case LT.Center:
-                val = pins.digitalReadPin(DigitalPin.P15);
-                break;
-            case LT.Right :
-                val = pins.digitalReadPin(DigitalPin.P16);
-                break;
-        }*/
         val = (pins.digitalReadPin(DigitalPin.P14) << 2) +
               (pins.digitalReadPin(DigitalPin.P15) << 1) +
               (pins.digitalReadPin(DigitalPin.P16));
-        return val;
+        */
     }
+
     /**
      * Ultrasonic sensor
      */

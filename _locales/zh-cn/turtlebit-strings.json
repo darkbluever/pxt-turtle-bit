@@ -16,6 +16,8 @@
     "turtlebit.DIR.Run_back|block": "向后移动",
     "turtlebit.DIR.Turn_Left|block": "向左转",
     "turtlebit.DIR.Turn_Right|block": "向右转",
+    "turtlebit.DIR.Run_Left|block": "向左移动",
+    "turtlebit.DIR.Run_Right|block": "向右移动",
     "turtlebit.LR.LeftSide|block": "左侧",
     "turtlebit.LR.RightSide|block": "右侧",
     "turtlebit.MotorState.stop|block": "停止",
