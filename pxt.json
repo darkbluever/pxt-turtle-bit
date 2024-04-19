@@ -1,5 +1,5 @@
 {
-    "name": "pxt-turtle-bit",
+    "name": "turtlebit",
     "version": "0.0.0",
     "description": "keyestudio turtle-bit for microbit",
     "dependencies": {
@@ -11,7 +11,7 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh-cn/pxt-turtle-bit-strings.json"
+        "_locales/zh-cn/turtlebit-strings.json"
     ],
     "testFiles": [
         "test.ts"

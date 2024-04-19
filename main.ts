@@ -1,6 +1,6 @@
 //% color="#ff6800" icon="\uf1b9" weight=15
 //% groups="['Motor', 'RGB-led', 'Neo-pixel', 'Sensor', 'Tone']"
-namespace turtleBit {
+namespace turtlebit {
     /**
      * use for control PCA9685
      */
