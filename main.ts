@@ -421,10 +421,10 @@ namespace turtlebit {
         let l2 = 1;
         let r1 = 1;
         let r2 = 1;
-        l1 = pins.DigitalReadPin(DigitalPin.P14)
-        l2 = pins.DigitalReadPin(DigitalPin.P11)
-        r1 = pins.DigitalReadPin(DigitalPin.P15)
-        r2 = pins.DigitalReadPin(DigitalPin.P16)
+        l1 = pins.digitalReadPin(DigitalPin.P14)
+        l2 = pins.digitalReadPin(DigitalPin.P11)
+        r1 = pins.digitalReadPin(DigitalPin.P15)
+        r2 = pins.digitalReadPin(DigitalPin.P16)
         //四路循迹引脚电平状态
         // 0 0 X 0
         // 1 0 X 0
