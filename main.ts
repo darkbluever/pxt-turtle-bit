@@ -48,11 +48,12 @@ namespace turtlebit {
         //% block="turn_left"
         Turn_Left = 2,
         //% block="turn_right"
-        Turn_Right = 3,
+        Turn_Right = 3/*,
         //% block="left"
         Run_Left = 4,
         //% block="right"
         Run_Right = 5
+        */
     }
     export enum LR {
         //% block="left_side"
@@ -175,7 +176,8 @@ namespace turtlebit {
                 setPwm(4, 0, 4095);
                 setPwm(3, 0, 0);
                 break;
-			case 4:  //run left
+            /*
+            case 4:  //run left
                 setPwm(0, 0, 4095);  //control speed : 0---4095
                 setPwm(1, 0, 0);
                 setPwm(2, 0, 0);
@@ -183,7 +185,7 @@ namespace turtlebit {
                 setPwm(4, 0, 0);
                 setPwm(3, 0, 4095);
                 break;
-			case 5:  //run right
+            case 5:  //run right
                 setPwm(0, 0, speed_value);  //control speed : 0---4095
                 setPwm(1, 0, 0);
                 setPwm(2, 0, 4095);
@@ -191,6 +193,7 @@ namespace turtlebit {
                 setPwm(4, 0, 0);
                 setPwm(3, 0, 0);
                 break;
+            */
             default: break;
         }
     }
